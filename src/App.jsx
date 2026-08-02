@@ -1,46 +1,11 @@
-import "./App.css";
-import { Outlet, useLocation } from "react-router-dom";
-import Header from "./components/Header";
-import styled from "styled-components";
-
-const getHeaderConfig = (pathname) => {
-  if (pathname === "/write") {
-    return {
-      title: "TMI 작성하기",
-      description: "작성한 내용은 TMI 게시판에 업로드돼요",
-      button: false,
-    };
-  }
-  if (pathname.startsWith("/edit/")) {
-    return {
-      title: "TMI 수정하기",
-      description: "작성한 TMI 내용을 수정할 수 있어요",
-      button: false,
-    };
-  }
-  return {
-    title: "숙멋 프론트의 TMI 게시판 🦁",
-    description: "사자들의 코멘트를 자유롭게 남겨주세요",
-    button: true,
-  };
-};
+import './App.css'
 
 function App() {
-  const { pathname } = useLocation();
-  const headerConfig = getHeaderConfig(pathname);
-
   return (
-    <Wrapper>
-      <Header {...headerConfig} />
-      <Outlet />
-    </Wrapper>
-  );
+    <>
+      <h2>GitHub Actions로 CI/CD 설정 성공!</h2>
+    </>
+  )
 }
 
-export default App;
-
-const Wrapper = styled.div`
-  width: 100%;
-  min-height: 100vh;
-  background-color: var(--bg-brown);
-`;
+export default App
